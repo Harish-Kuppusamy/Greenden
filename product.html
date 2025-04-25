@@ -15,7 +15,7 @@
     <nav class="bg-green-100 p-3 flex items-center justify-between shadow-xl sticky top-0 z-10">
         <h1 class="text-2xl">Greenden</h1>
 
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-5 h-5 md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-5 h-5 md:hidden" id="show-nav">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
           </svg>
           
@@ -38,30 +38,71 @@
     </nav>
 
 
+
+
+    
+<!--side navbar-->
+
+<section id="sidenav" class="bg-green-100 fixed z-20 top-0 right-0 " style="width: 50%; height: 100vh; right: -60%; transition: 1.5s ;">
+
+
+
+
+<div  class="text-right p-5">
+
+<p class="inline cursor-pointer" id="close-nav">X</p>
+
+</div>
+
+
+
+
+       <ul class="flex flex-col  items-center gap-10 text-grey-600 ">
+        <li>
+            <a href="index.html" class="hover:underline hover:text-black-600">Home</a>
+        </li>
+        <li>
+            <a href="product.html" class="hover:underline hover:text-black-600">Products</a>
+        </li>
+        <li>
+            <a href="contact.html" class="hover:underline hover:text-black-600">Contact</a>
+        </li>
+       </ul>
+
+
+
+       
+
+
+</section>
+
+
+
+    
     <!--hero section-->
     <section class="text-center mt-5">
         <h1 class="text-3xl font-bold">Our Products</h1>
-        <input type="text" placeholder="Search Our Products" class="border border-black w-full mt-2 p-2 " style="width: 80%;">
+        <input type="text" placeholder="Search Our Products" class="border border-black w-full mt-2 p-2 " style="width: 80%;" id="search">
 
-<div class="grid grid-cols-2  md:grid-cols-4 gap-5 m-8">
+<div class="grid grid-cols-2  md:grid-cols-4 gap-5 m-8"  id="container">
     <div>
         <img src="./assets/bs1.jpg" alt="" class="inline border border-black hover:shadow-xl transform hover:-translate-y-2">
-        <h1>Model 1</h1>
+        <h1>Camellia</h1>
         <p>$ 20</p>
     </div>
     <div>
         <img src="./assets/bs2.jpg" alt="" class="inline border border-black hover:shadow-xl  transform hover:-translate-y-2" >
-        <h1>Model 2</h1>
+        <h1>Violet</h1>
         <p>$ 20</p>
     </div>
     <div>
         <img src="./assets/bs3.jpg" alt="" class="inline border border-black hover:shadow-xl  transform hover:-translate-y-2" >
-        <h1>Model 3</h1>
+        <h1>Hydrangea</h1>
         <p>$ 20</p>
     </div>
     <div>
         <img src="./assets/bs4.jpg" alt="" class="inline border border-black hover:shadow-xl  transform hover:-translate-y-2">
-        <h1>Model 4</h1>
+        <h1>Iris</h1>
         <p>$ 20</p>
     </div>
 
@@ -69,44 +110,44 @@
 
     <div>
         <img src="./assets/bs1.jpg" alt="" class="inline border border-black hover:shadow-xl transform hover:-translate-y-2">
-        <h1>Model 5</h1>
+        <h1>Peony</h1>
         <p>$ 20</p>
     </div>
     <div>
         <img src="./assets/bs2.jpg" alt="" class="inline border border-black hover:shadow-xl  transform hover:-translate-y-2" >
-        <h1>Model 6</h1>
+        <h1>Dahlia</h1>
         <p>$ 20</p>
     </div>
     <div>
         <img src="./assets/bs3.jpg" alt="" class="inline border border-black hover:shadow-xl  transform hover:-translate-y-2" >
-        <h1>Model 7</h1>
+        <h1>Jasmine</h1>
         <p>$ 20</p>
     </div>
     <div>
         <img src="./assets/bs4.jpg" alt="" class="inline border border-black hover:shadow-xl  transform hover:-translate-y-2">
-        <h1>Model 8</h1>
+        <h1>Jasmine</h1>
         <p>$ 20</p>
     </div>
 
 
     <div>
         <img src="./assets/bs1.jpg" alt="" class="inline border border-black hover:shadow-xl transform hover:-translate-y-2">
-        <h1>Model 9</h1>
+        <h1>Lavender</h1>
         <p>$ 20</p>
     </div>
     <div>
         <img src="./assets/bs2.jpg" alt="" class="inline border border-black hover:shadow-xl  transform hover:-translate-y-2" >
-        <h1>Model 10</h1>
+        <h1>Daisy</h1>
         <p>$ 20</p>
     </div>
     <div>
         <img src="./assets/bs3.jpg" alt="" class="inline border border-black hover:shadow-xl  transform hover:-translate-y-2" >
-        <h1>Model 11</h1>
+        <h1>Lily</h1>
         <p>$ 20</p>
     </div>
     <div>
         <img src="./assets/bs4.jpg" alt="" class="inline border border-black hover:shadow-xl  transform hover:-translate-y-2">
-        <h1>Model 12</h1>
+        <h1>Sunflower</h1>
         <p>$ 20</p>
     </div>
 
@@ -114,5 +155,68 @@
 </div>
 
     </section>
+
+
+
+
+
+<script>
+
+var sidenav = document.getElementById("sidenav");
+var closenav = document.getElementById("close-nav");
+var shownav = document.getElementById("show-nav");
+
+
+
+closenav.addEventListener("click", function(){
+
+sidenav.style.right ="-60%";
+
+
+})
+
+
+shownav.addEventListener("click", function(){
+
+sidenav.style.right ="0";
+
+
+})
+
+
+
+var search = document.getElementById("search");
+
+
+var container = document.getElementById("container");
+
+var element = container.querySelectorAll("h1");
+
+
+search.addEventListener("keyup", function(){
+
+
+    var enteredvalue = event.target.value.toUpperCase();
+for(let i=0; i<element.length; i++){
+
+    if(element[i].textContent.toUpperCase().indexOf(enteredvalue)>0){
+
+element[i].parentNode.style.display="block";
+
+    }
+
+    else{
+
+      element[i].parentNode.style.display="none";
+    }
+}
+
+
+})
+
+
+</script>
+
+
 </body>
 </html>

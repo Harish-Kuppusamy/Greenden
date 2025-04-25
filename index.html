@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greenden</title>
     <!--Tailwind cdn-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" integrity="sha256-tq2XQC7duQPnpdenPuR6Z5IE773aRSGjkcutnfUJuTI=" crossorigin="anonymous">
+    <link href="./src/output.css" rel="stylesheet">
 </head>
 <body>
     <!--Responsive Navbar-->
@@ -13,7 +13,7 @@
     <nav class="bg-green-100 p-3 flex items-center justify-between shadow-xl sticky top-0 z-10">
         <h1 class="text-2xl">Greenden</h1>
 
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-5 h-5 md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-5 h-5 md:hidden" id="show-nav">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
           </svg>
           
@@ -22,7 +22,7 @@
           
 
 
-       <ul class="flex gap-5 text-grey-600  hidden md:flex">
+       <ul class=" gap-5 text-grey-600  hidden md:flex">
         <li>
             <a href="#" class="hover:underline hover:text-black-600">Home</a>
         </li>
@@ -37,6 +37,44 @@
 
 
 
+
+
+
+
+<!--side navbar-->
+
+<section id="sidenav" class="bg-green-100 fixed z-20 top-0 right-0 " style="width: 50%; height: 100vh; right: -60%; transition: 1.5s ;">
+
+
+
+
+<div  class="text-right p-5">
+
+<p class="inline cursor-pointer" id="close-nav">X</p>
+
+</div>
+
+
+
+
+       <ul class="flex flex-col  items-center gap-10 text-grey-600 ">
+        <li>
+            <a href="#" class="hover:underline hover:text-black-600">Home</a>
+        </li>
+        <li>
+            <a href="product.html" class="hover:underline hover:text-black-600">Products</a>
+        </li>
+        <li>
+            <a href="contact.html" class="hover:underline hover:text-black-600">Contact</a>
+        </li>
+       </ul>
+
+
+
+       
+
+
+</section>
 
  
 
@@ -171,6 +209,39 @@
 <p class="text-xl">At GreenDen, we believe every space deserves a touch of green. Our mission is to bring nature closer to you with a wide variety of healthy, hand-picked plants.</p>
 <p>@copy Greenden 2025. All Rights Reserved</p>
 </section>
+
+
+
+
+
+
+<script>
+
+var sidenav = document.getElementById("sidenav");
+var closenav = document.getElementById("close-nav");
+var shownav = document.getElementById("show-nav");
+
+
+
+closenav.addEventListener("click", function(){
+
+sidenav.style.right ="-60%";
+
+
+})
+
+
+shownav.addEventListener("click", function(){
+
+sidenav.style.right ="0";
+
+
+})
+
+
+
+</script>
+
 
 </body>
 </html>
